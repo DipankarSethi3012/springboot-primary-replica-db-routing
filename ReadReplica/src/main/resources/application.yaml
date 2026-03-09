@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: ReadReplica
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+app:
+  datasource:
+    primary:
+      jdbc-url: jdbc:postgresql://localhost:5432/demo_db
+      username: postgres
+      password: admin
+      driver-class-name: org.postgresql.Driver
+    replica:
+      jdbc-url: jdbc:postgresql://localhost:5433/demo_db
+      username: postgres
+      password: admin
+      driver-class-name: org.postgresql.Driver
